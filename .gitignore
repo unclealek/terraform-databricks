@@ -1,0 +1,9 @@
+.terraform/
+terraform.tfvars
+*.auto.tfvars
+.env
+.DS_Store
+learning.md
+*.tfstate
+*.tfstate.*
+crash.log
