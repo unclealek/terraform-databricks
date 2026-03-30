@@ -14,7 +14,7 @@ resource "databricks_job" "cleaning" {
     sql_task {
       warehouse_id = var.warehouse_id
       file {
-        path   = "${local.repo_base_path}/Pipeline Query/dropStage.sql"
+        path   = "${local.repo_base_path}/dropStage.sql"
         source = "WORKSPACE"
       }
     }
@@ -28,7 +28,7 @@ resource "databricks_job" "cleaning" {
     }
 
     spark_python_task {
-      python_file = "/Repos/kelvin.aliche@gmail.com/transformation/generate_sparkConvert_Append.py"
+      python_file = "${local.repo_base_path}/generate_sparkConvert_Append.py"
     }
 
     environment_key = local.python_env_key
